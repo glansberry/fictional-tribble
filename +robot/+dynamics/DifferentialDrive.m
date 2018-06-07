@@ -50,8 +50,10 @@ classdef DifferentialDrive < simiam.robot.dynamics.Dynamics
             L = obj.wheel_base_length;
             
             %% START CODE BLOCK %%
-            vel_r = 0;
-            vel_l = 0;
+            % r+l = v * 2/R
+            % r-l = w*L/R
+            vel_r = (v*2 + w*L)/2/R;
+            vel_l = (v*2 - w*L)/2/R;
             %% END CODE BLOCK %%
         end
         
